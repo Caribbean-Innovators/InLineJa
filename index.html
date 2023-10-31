@@ -62,13 +62,13 @@
             <option value="catherine">St. Catherine</option>
         </select>
 
-        <label for="location">Location:</label>
+        <!-- <label for="location">Location:</label>
         <select id="location" name="location">
             <option value="kfc_manor_park">KFC: Manor Park</option>
             <option value="ncb_constant_spring_road">NCB: Constant Spring Road</option>
             <option value="scotiabank_constant_spring_road">Scotiabank: Constant Spring Road</option>
             <option value="tax_office_constant_spring_road">Tax Office: Constant Spring Road</option>
-        </select>
+        </select> -->
 
         <input type="submit" value="Explore Location" class="custom_button" id="submit">
 
@@ -103,7 +103,8 @@
 
         document.getElementById("submit").addEventListener('click', function(e){
             e.preventDefault();
-            set(ref(db, 'locations/' + document.getElementById("parish").value),
+            // set(ref(db, 'locations/' + document.getElementById("parish").value),
+            set(ref(db, document.getElementById("parish").value),
             {
                 parish: document.getElementById("parish").value
             });
