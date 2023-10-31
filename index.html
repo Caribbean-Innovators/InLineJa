@@ -105,12 +105,11 @@
         document.getElementById("submit").addEventListener('click', function(e){
             e.preventDefault();
             // set(ref(db, 'locations/' + document.getElementById("parish").value),
-            set(ref(db, document.getElementById("parish").value),
+            set(ref(db, 'locations/' + document.getElementById("parish").value),
             {
                 parish: document.getElementById("parish").value
             });
             // Show Location's Page
-            alert("See Location!")
         })
 
     </script>
