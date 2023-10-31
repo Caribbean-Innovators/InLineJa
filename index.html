@@ -41,7 +41,7 @@
     </style>
 </head>
 <body>
-    <img src="images/InLineJa_Logo.png" alt="Logo" class="custom_logo"><br><br>
+    <img src="images/InLineJa_Logo.png" alt="Logo" class="custom_logo"><br>
     <img src="images/WehYuhDeh.png" alt="WehYuhDeh" class="custom_image"><br>
     <form action="/submit" method="post">
 
@@ -70,11 +70,47 @@
             <option value="tax_office_constant_spring_road">Tax Office: Constant Spring Road</option>
         </select>
 
-        <input type="submit" value="Explore Location" class="custom_button">
+        <input type="submit" value="Explore Location" class="custom_button" id="submit">
 
     </form>
+    <script type="module">
 
-    <script></script>
+        // Import the functions you need from the SDKs you need
+        import { initializeApp } from "https://www.gstatic.com/firebasejs/10.5.2/firebase-app.js";
+        import { getDatabase, ref, set, get, child } from "https://www.gstatic.com/firebasejs/10.5.2/firebase-app.js";
+        import { getAnalytics } from "https://www.gstatic.com/firebasejs/10.5.2/firebase-analytics.js";
+        // TODO: Add SDKs for Firebase products that you want to use
+        // https://firebase.google.com/docs/web/setup#available-libraries
+
+        // Your web app's Firebase configuration
+        // For Firebase JS SDK v7.20.0 and later, measurementId is optional
+        const firebaseConfig = {
+        apiKey: "AIzaSyAr91WpfA5aKGewm7EQAzpXC4wxld4Pxq4",
+        authDomain: "inlineja-locations.firebaseapp.com",
+        projectId: "inlineja-locations",
+        storageBucket: "inlineja-locations.appspot.com",
+        messagingSenderId: "638980881075",
+        appId: "1:638980881075:web:48da7625e9dbbaa02d0ec6",
+        measurementId: "G-JVV7YYQ2BK"
+        };
+
+        // Initialize Firebase
+        const app = initializeApp(firebaseConfig);
+        const analytics = getAnalytics(app);
+
+        // Get ref to database services
+        const db = getDatabase(app);
+
+        document.getElementById("submit").addEventListener('click', function(e){
+            set(ref(db, 'locations/' + document/getElementById("parish").value),
+            {
+                parish: document.getElementById("parish").value,
+                location: document.getElementById("location").value
+            });
+            // Show Location's Page
+        })
+
+    </script>
     
 </body>
 </html>
