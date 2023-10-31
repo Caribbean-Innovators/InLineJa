@@ -9,7 +9,7 @@
         body {
             display: flex;
             flex-direction: column;
-            justify-content: flex-start;
+            justify-content: center;
             align-items: center;
             min-height: 100vh;
             margin: 0;
@@ -22,6 +22,17 @@
         .logo {
             width: 200px;
             height: auto;
+        }
+        .custom_button {
+            background-color: #046A38; 
+            color: white;
+            padding: 10px 20px;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+        .custom_button:active {
+            background-color: #FFD700;
         }
     </style>
 </head>
@@ -55,35 +66,9 @@
             <option value="tax_office_constant_spring_road">Tax Office: Constant Spring Road</option>
         </select>
 
-        <input type="submit" value="Explore Location">
+        <input type="submit" value="Explore Location" class="custom_button">
 
     </form>
-
-    <!-- <h3>Request a New Location</h3>
-    <form action="/submit" method="post">
-        <label for="parish">Parish: </label>
-        <select id="parish" name="parish">
-            <option value="ksa">Kingston & St. Andrew</option>
-            <option value="thomas">St. Thomas</option>
-            <option value="portland">Portland</option>
-            <option value="mary">St. Mary</option>
-            <option value="ann">St. Ann</option>
-            <option value="trelawny">Trelawny</option>
-            <option value="james">St. James</option>
-            <option value="hanover">Hanover</option>
-            <option value="westmoreland">Westmoreland</option>
-            <option value="elizabeth">St. Elizabeth</option>
-            <option value="manchester">Manchester</option>
-            <option value="clarendon">Clarendon</option>
-            <option value="catherine">St. Catherine</option>
-        </select>
-
-        <label for="location">Location: </label>
-        <input type="text" id="location" name="location" required>
-
-        <input type="submit" value="Submit">
-    </form> -->
-
     
 </body>
 </html>
