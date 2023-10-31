@@ -27,6 +27,18 @@
 </head>
 <body>
     <img src="images/InLineJa_Logo.png" alt="Logo" class="logo">
+    <div id="location-details">
+        <!-- JavaScript will populate this section -->
+    </div>
+    <script>
+        // Extract the parish from the URL query parameter
+        const urlParams = new URLSearchParams(window.location.search);
+        const parish = urlParams.get('parish');
+
+        // Display the selected parish
+        const locationDetails = document.getElementById('location-details');
+        locationDetails.textContent = `Parish: ${parish}`;
+    </script>
     <h1>Location</h1>
     <h2>Crowd Level</h2>
     <h2>Live Chat</h2>

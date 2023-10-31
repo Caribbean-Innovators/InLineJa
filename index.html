@@ -104,13 +104,14 @@
 
         document.getElementById("submit").addEventListener('click', function(e){
             e.preventDefault();
-            // set(ref(db, 'locations/' + document.getElementById("parish").value),
-            set(ref(db, 'locations/' + document.getElementById("parish").value),
+            const selectedParish = document.getElementById("parish").value;
+            set(ref(db, 'locations/' + selectedParish),
             {
-                parish: document.getElementById("parish").value
+                parish: selectedParish
             });
             // Show Location's Page
-        })
+            window.location.href = 'location.html?parish=${selectedParish}';
+        });
 
     </script>
     
