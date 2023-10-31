@@ -43,7 +43,7 @@
 <body>
     <img src="images/InLineJa_Logo.png" alt="Logo" class="custom_logo"><br>
     <img src="images/WehYuhDeh.png" alt="WehYuhDeh" class="custom_image"><br>
-    <form action="/submit" method="post">
+    <form action="/submit" method="POST">
 
         <label for="parish">Parish:</label>
         <select id="parish" name="parish">
@@ -102,6 +102,7 @@
         const db = getDatabase(app);
 
         document.getElementById("submit").addEventListener('click', function(e){
+            e.preventDefault();
             set(ref(db, 'locations/' + document/getElementById("parish").value),
             {
                 parish: document.getElementById("parish").value,
