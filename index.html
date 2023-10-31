@@ -44,9 +44,36 @@
             <option value="zero">0</option>
         </select>
 
+        <input type="submit" value="Submit">
+
+        <h3>Submit a Picture</h3>
+
     </form>
 
     <h2>Add Location</h2>
+    <form action="/submit" method="post">
+        <label for="parish">Parish</label>
+        <select id="parish" name="parish">
+            <option value="ksa">Kingston & St. Andrew</option>
+            <option value="thomas">St. Thomas</option>
+            <option value="portland">Portland</option>
+            <option value="mary">St. Mary</option>
+            <option value="ann">St. Ann</option>
+            <option value="trelawny">Trelawny</option>
+            <option value="james">St. James</option>
+            <option value="hanover">Hanover</option>
+            <option value="westmoreland">Westmoreland</option>
+            <option value="elizabeth">St. Elizabeth</option>
+            <option value="manchester">Manchester</option>
+            <option value="clarendon">Clarendon</option>
+            <option value="catherine">St. Catherine</option>
+        </select>
+
+        <label for="location">Location</label>
+        <input type="text" id="location" name="location" required><br><br>
+
+        <input type="submit" value="Submit">
+    </form>
 
     
 </body>
