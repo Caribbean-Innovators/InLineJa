@@ -103,10 +103,9 @@
 
         document.getElementById("submit").addEventListener('click', function(e){
             e.preventDefault();
-            set(ref(db, 'locations/' + document/getElementById("parish").value),
+            set(ref(db, 'locations/' + document.getElementById("parish").value),
             {
-                parish: document.getElementById("parish").value,
-                location: document.getElementById("location").value
+                parish: document.getElementById("parish").value
             });
             // Show Location's Page
             alert("See Location!")
