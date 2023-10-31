@@ -16,7 +16,7 @@
         }
         form {
             display: flex;
-            flex-direction: row;
+            flex-direction: column;
             gap: 10px;
         }
         .logo {
@@ -75,7 +75,7 @@
 
     <h2>Add a New Location</h2>
     <form action="/submit" method="post">
-        <label for="parish">Parish</label>
+        <label for="parish">Parish: </label>
         <select id="parish" name="parish">
             <option value="ksa">Kingston & St. Andrew</option>
             <option value="thomas">St. Thomas</option>
