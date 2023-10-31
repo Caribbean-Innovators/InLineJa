@@ -14,6 +14,11 @@
             min-height: 100vh;
             margin: 0;
         }
+        form {
+            display: flex;
+            flex-direction: column;
+            gap: 10px;
+        }
     </style>
 </head>
 <body>
@@ -44,7 +49,7 @@
             <option value="manor_park_kfc">Manor Park KFC</option>
         </select>
 
-        <label for="crowd">How the line stay?</label>
+        <label for="crowd">Crowd level</label>
         <select id="crowd" name="crowd">
             <option value="five">5</option>
             <option value="four">4</option>
@@ -80,7 +85,7 @@
         </select>
 
         <label for="location">Location: </label>
-        <input type="text" id="location" name="location" required><br><br>
+        <input type="text" id="location" name="location" required>
 
         <input type="submit" value="Submit">
     </form>
