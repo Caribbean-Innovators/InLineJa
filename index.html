@@ -97,7 +97,7 @@
         document.getElementById("submit").addEventListener('click', function(e){
             e.preventDefault();
             const selectedParish = document.getElementById("parish").value;
-            set(ref(db, 'locations/' + selectedParish), 0);
+            set(ref(db, 'locations/' + selectedParish + '/'));
             // Show Location's Page
             window.location.href = 'location.html?selectedParish=${selectedParish}';
         });
