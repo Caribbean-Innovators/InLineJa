@@ -97,7 +97,7 @@
         document.getElementById("submit").addEventListener('click', function(e){
             e.preventDefault();
             const selectedParish = document.getElementById("parish").value;
-            set(ref(db, selectedParish));
+            set(ref(db, 'locations/' + selectedParish));
             // set(ref(db, 'locations/' + selectedParish),
             // {
             //     parish: selectedParish
