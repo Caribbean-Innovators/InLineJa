@@ -30,11 +30,11 @@
     <script>
         // Extract the parish from the URL query parameter
         const urlParams = new URLSearchParams(window.location.search);
-        const parish = urlParams.get('selectedParish');
+        const selectedParish = urlParams.get('selectedParish');
 
         // Display the selected parish
         const locationDetails = document.getElementById('location-details');
-        locationDetails.textContent = `Parish: ${parish}`;
+        locationDetails.textContent = `Parish: ${selectedParish}`;
     </script>
     <h1>Location</h1>
     <h2>Crowd Level</h2>

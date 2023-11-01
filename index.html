@@ -97,11 +97,10 @@
         document.getElementById("submit").addEventListener('click', function(e){
             e.preventDefault();
             const selectedParish = document.getElementById("parish").value;
-            set(ref(db, 'locations/' + selectedParish));
-            // set(ref(db, 'locations/' + selectedParish),
-            // {
-            //     parish: selectedParish
-            // });
+            set(ref(db, 'locations/' + selectedParish),
+            {
+                parish: selectedParish
+            });
             // Show Location's Page
             window.location.href = 'location.html?selectedParish=${selectedParish}';
         });
