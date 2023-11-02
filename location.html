@@ -41,11 +41,15 @@
     </style>
 </head>
 <body>
+    <h1 id="activeParish"></h1>
     <img src="images/InLineJa_Logo.png" alt="Logo" class="custom_logo"><br>
     <script>
         // Extract the parish from the URL query parameter
         const urlParams = new URLSearchParams(window.location.search);
         const selectedParish = urlParams.get('selectedParish');
+
+        const active = document.getElementById('activeParish');
+        active.textContent = '${selectedParish}';
     </script>
     <h1>Location</h1>
     <h2>Crowd Level</h2>
