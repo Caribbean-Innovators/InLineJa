@@ -50,7 +50,8 @@
         // Display the selected parish in the h1 tag
         const h1Element = document.getElementById('displayParish');
         if (selectedParish) {
-            h1Element.textContent = `Parish: ${selectedParish}`;
+            activeParish = 'Parish: ' + selectedParish;
+            h1Element.textContent = activeParish;
         } else {
             h1Element.textContent = 'Parish: Not Found';
         }
