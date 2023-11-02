@@ -50,14 +50,14 @@
         // Display the selected parish in the h1 tag
         const h1Element = document.getElementById('displayParish');
         if (selectedParish) {
+            if (selectedParish == 'KingstonStAndrew') {
+                selectedParish = 'Kingston & St. Andrew';
+            }
+            else if (selectedParish.includes(".")) {
+                const formattedParish = selectedParish.replace(/\./g, '. ');
+                selectedParish = formattedParish;
+            }
             activeParish = 'Parish: ' + selectedParish;
-            if (activeParish == 'KingstonStAndrew') {
-                activeParish = 'Kingston & St. Andrew';
-            }
-            else if (activeParish.includes(".")) {
-                const formattedParish = activeParish.replace(/\./g, '. ');
-                activeParish = formattedParish;
-            }
             h1Element.textContent = activeParish;
         } else {
             h1Element.textContent = 'Parish: Not Found';
