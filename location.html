@@ -42,16 +42,20 @@
 </head>
 <body>
     <img src="images/InLineJa_Logo.png" alt="Logo" class="custom_logo"><br>
-    <h1 id="activeParish"></h1>
+    <h1 id="displayParish">Parish:</h1>
     <script>
         // Extract the parish from the URL query parameter
         const urlParams = new URLSearchParams(window.location.search);
         const selectedParish = urlParams.get('selectedParish');
-
-        document.getElementById("activeParish").innerHTML = selectedParish;
+        // Display the selected parish in the h1 tag
+        const h1Element = document.getElementById('displayParish');
+        if (selectedParish) {
+            h1Element.textContent = `Parish: ${selectedParish}`;
+        } else {
+            h1Element.textContent = 'Parish: Not Found';
+        }
     </script>
-    <h1 id="activeParish"></h1>
-    <h1>Location</h1>
+    
     <h2>Crowd Level</h2>
     <h2>Live Chat</h2>
     <h2>Submit Pictures</h2>
