@@ -46,7 +46,7 @@
     <script>
         // Extract the parish from the URL query parameter
         const urlParams = new URLSearchParams(window.location.search);
-        const selectedParish = urlParams.get('activeParish');
+        const selectedParish = urlParams.get('selectedParish');
         // Display the selected parish in the h1 tag
         const h1Element = document.getElementById('displayParish');
         if (selectedParish) {
