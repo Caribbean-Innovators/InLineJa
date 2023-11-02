@@ -53,8 +53,8 @@
             if (selectedParish == 'KingstonStAndrew') {
                 selectedParish = 'Kingston & St. Andrew';
             }
-            else if (selectedParish.includes(".")) {
-                const formattedParish = selectedParish.replace(/\./g, '. ');
+            else if (selectedParish.includes("St")) {
+                const formattedParish = selectedParish.replace(/St/g, 'St. ');
                 selectedParish = formattedParish;
             }
             activeParish = 'Parish: ' + selectedParish;
