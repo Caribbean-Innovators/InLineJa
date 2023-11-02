@@ -42,7 +42,7 @@
 </head>
 <body>
     <form>
-        <input type="submit" value="Update Locations" id="update">
+        <input type="submit" value="Update Locations" class="custom_button" id="submit">
     </form>
 
     <script type="module">
@@ -74,12 +74,12 @@
         // Get ref to database services
         const db = getDatabase(app);
 
-        document.getElementById("update").addEventListener('click', function(e){
+        document.getElementById("sumbit").addEventListener('click', function(e){
             e.preventDefault();
             const KingstonStAndrew = {
                 "KFC (Manor Park)": 0,
-                "Tax Office (Constant Spring Road": 0,
-                "Scotiabank (Constant Spring Road": 0,
+                "Tax Office (Constant Spring Road)": 0,
+                "Scotiabank (Constant Spring Road)": 0,
             };
 
             set(ref(db, "KingstonStAndrew"), KingstonStAndrew);
