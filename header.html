@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>InLineJa</title>
+    <style>
+        body {
+            display: flex;
+            flex-direction: column;
+            justify-content: flex-start;
+            align-items: center;
+            min-height: 100vh;
+            margin: 0;
+        }
+        form {
+            display: flex;
+            flex-direction: column;
+            gap: 10px;
+        }
+        .custom_logo {
+            width: 250px;
+            height: auto;
+        }
+        .custom_image {
+            width: 200px;
+            height: auto;
+        }
+        .custom_button {
+            background-color: #046A38; 
+            color: white;
+            padding: 10px 20px;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+        .custom_button:active {
+            background-color: black;
+        }
+    </style>
+</head>
+<body>
+    <img src="images/InLineJa_Logo.png" alt="Logo" class="custom_logo"><br>
+    <!-- <img src="images/WehYuhDeh.png" alt="WehYuhDeh" class="custom_image"><br> -->
+    <form>
+
+        <label for="parish">Parish:</label>
+        <select id="parish" name="parish">
+            <option value="KingstonStAndrew">Kingston & St. Andrew</option>
+            <option value="StThomas">St. Thomas</option>
+            <option value="Portland">Portland</option>
+            <option value="StMary">St. Mary</option>
+            <option value="StAnn">St. Ann</option>
+            <option value="Trelawny">Trelawny</option>
+            <option value="StJames">St. James</option>
+            <option value="Hanover">Hanover</option>
+            <option value="Westmoreland">Westmoreland</option>
+            <option value="StElizabeth">St. Elizabeth</option>
+            <option value="Manchester">Manchester</option>
+            <option value="Clarendon">Clarendon</option>
+            <option value="StCatherine">St. Catherine</option>
+        </select>
+
+        <input type="submit" value="Explore Location" class="custom_button" id="submit">
+
+    </form>
+    <script type="module">
+
+        // Import the functions you need from the SDKs you need
+        import { initializeApp } from "https://www.gstatic.com/firebasejs/10.5.2/firebase-app.js";
+        import { getDatabase, ref, set, get, child } from "https://www.gstatic.com/firebasejs/10.5.2/firebase-database.js";
+        import { getAnalytics } from "https://www.gstatic.com/firebasejs/10.5.2/firebase-analytics.js";
+
+        // TODO: Add SDKs for Firebase products that you want to use
+        // https://firebase.google.com/docs/web/setup#available-libraries
+
+        // Your web app's Firebase configuration
+        // For Firebase JS SDK v7.20.0 and later, measurementId is optional
+        const firebaseConfig = {
+        apiKey: "AIzaSyAr91WpfA5aKGewm7EQAzpXC4wxld4Pxq4",
+        authDomain: "inlineja-locations.firebaseapp.com",
+        projectId: "inlineja-locations",
+        storageBucket: "inlineja-locations.appspot.com",
+        messagingSenderId: "638980881075",
+        appId: "1:638980881075:web:48da7625e9dbbaa02d0ec6",
+        measurementId: "G-JVV7YYQ2BK"
+        };
+
+        // Initialize Firebase
+        const app = initializeApp(firebaseConfig);
+        const analytics = getAnalytics(app);
+
+        // Get ref to database services
+        const db = getDatabase(app);
+
+        document.getElementById("submit").addEventListener('click', function(e){
+            e.preventDefault();
+            const selectedParish = document.getElementById("parish").value;
+            set(ref(db, 'locations/' + selectedParish), 0);
+            // Show Location's Page
+            window.location.href = 'location.html?selectedParish=${selectedParish}';
+        });
+
+    </script>
+    
+</body>
+</html>
