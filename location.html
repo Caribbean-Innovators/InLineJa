@@ -42,20 +42,16 @@
 </head>
 <body>
     <img src="images/InLineJa_Logo.png" alt="Logo" class="custom_logo"><br>
-    <!-- <img src="images/WehYuhDeh.png" alt="WehYuhDeh" class="custom_image"><br> -->
     <script>
         // Extract the parish from the URL query parameter
         const urlParams = new URLSearchParams(window.location.search);
         const selectedParish = urlParams.get('selectedParish');
 
-        // Display the selected parish
-        const locationDetails = document.getElementById('location-details');
-        locationDetails.textContent = `Parish: ${selectedParish}`;
-
-        const h1Element = document.querySelector('h1');
-        h1Element.textContent = selectedParish;
+        // Display the selected parish in the h1 tag
+    const selectedParishDisplay = document.getElementById('selectedParishDisplay');
+    selectedParishDisplay.textContent = selectedParish;
     </script>
-    <h1 id="locationDetails"></h1>
+    <h1 id="selectedParishDisplay"></h1>
     <h2>Crowd Level</h2>
     <h2>Live Chat</h2>
     <h2>Submit Pictures</h2>
