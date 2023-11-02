@@ -51,14 +51,18 @@
         const h1Element = document.getElementById('displayParish');
         if (selectedParish) {
             if (selectedParish == 'KingstonStAndrew') {
-                selectedParish = 'Kingston & St. Andrew';
+                activeParish = 'Parish: Kingston & St. Andrew';
+                h1Element.textContent = activeParish;
             }
             else if (selectedParish.includes("St")) {
                 const formattedParish = selectedParish.replace(/St/g, 'St. ');
-                selectedParish = formattedParish;
+                activeParish = 'Parish: ' + formattedParish;
+                h1Element.textContent = activeParish;
             }
-            activeParish = 'Parish: ' + selectedParish;
-            h1Element.textContent = activeParish;
+            else {
+                activeParish = 'Parish: ' + selectedParish;
+                h1Element.textContent = activeParish;
+            }
         } else {
             h1Element.textContent = 'Parish: Not Found';
         }
