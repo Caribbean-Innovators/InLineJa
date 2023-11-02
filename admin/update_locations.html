@@ -41,6 +41,8 @@
     </style>
 </head>
 <body>
+    <h1>Admin</h1>
+    <h2>Update Locations</h2>
     <form>
         <input type="submit" value="Update Locations" class="custom_button" id="submit">
     </form>
@@ -74,7 +76,7 @@
         // Get ref to database services
         const db = getDatabase(app);
 
-        document.getElementById("sumbit").addEventListener('click', function(e){
+        document.getElementById("submit").addEventListener('click', function(e){
             e.preventDefault();
             const KingstonStAndrew = {
                 "KFC (Manor Park)": 0,
