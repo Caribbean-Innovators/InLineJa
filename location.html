@@ -51,6 +51,13 @@
         const h1Element = document.getElementById('displayParish');
         if (selectedParish) {
             activeParish = 'Parish: ' + selectedParish;
+            if (activeParish == 'KingstonStAndrew') {
+                activeParish = 'Kingston & St. Andrew';
+            }
+            else if (activeParish.includes(".")) {
+                const formattedParish = activeParish.replace(/\./g, '. ');
+                activeParish = formattedParish;
+            }
             h1Element.textContent = activeParish;
         } else {
             h1Element.textContent = 'Parish: Not Found';
