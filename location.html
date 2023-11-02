@@ -35,6 +35,9 @@
         // Display the selected parish
         const locationDetails = document.getElementById('location-details');
         locationDetails.textContent = `Parish: ${selectedParish}`;
+
+        const h1Element = document.querySelector('h1');
+        h1Element.textContent = selectedParish;
     </script>
     <h1 id="locationDetails"></h1>
     <h2>Crowd Level</h2>
