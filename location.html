@@ -5,9 +5,44 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Location</title>
+    <style>
+        body {
+            display: flex;
+            flex-direction: column;
+            justify-content: flex-start;
+            align-items: center;
+            min-height: 100vh;
+            margin: 0;
+        }
+        form {
+            display: flex;
+            flex-direction: column;
+            gap: 10px;
+        }
+        .custom_logo {
+            width: 250px;
+            height: auto;
+        }
+        .custom_image {
+            width: 200px;
+            height: auto;
+        }
+        .custom_button {
+            background-color: #046A38; 
+            color: white;
+            padding: 10px 20px;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+        .custom_button:active {
+            background-color: black;
+        }
+    </style>
 </head>
 <body>
-    <iframe src="header.html"></iframe>
+    <img src="images/InLineJa_Logo.png" alt="Logo" class="custom_logo"><br>
+    <!-- <img src="images/WehYuhDeh.png" alt="WehYuhDeh" class="custom_image"><br> -->
     <script>
         // Extract the parish from the URL query parameter
         const urlParams = new URLSearchParams(window.location.search);
